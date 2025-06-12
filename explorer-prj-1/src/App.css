@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/004/708/652/non_2x/simple-purple-background-flat-purple-gradation-wavy-background-vector.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat  ;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #23063d;
+  font-size: 40px;
+  transition: 0.3s all ease-in;
+}
+
+h1:hover {
+  color: #fff;
+}
+
+/* Card container */
+
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  min-width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px 0;
+  margin: 5px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-details img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 15px;
+  border: 3px solid #69408e;
+}
+
+.card-details img:hover{
+  height:160px;
+  width: 160px;
+  transition: all 0.8s ease-out;
+}
+
+.card-details h4 {
+  margin: 10px 0 20px;
+  font-size: 20px;
+  color: #101010;
+}
+
+.card-details span {
+
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 7px;
+  border-radius:5px;
+  font-weight: 500;
+  width:100px;
+  color: white;
+  background-color: #69408e;
+  margin-bottom: 8px;
+}
+
+.card-details a {
+  display: block;
+  font-size: 18px;
+  color: #69408e;
+  text-decoration: none;
+  margin: 20px 0 10px;
+  font-weight: 500;
+}
+
+.card-details p {
+  font-size: 18px;
+  color: #101010;
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 1024px) {
+  .card {
+    width: 45%; 
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 90%; 
+  }
+}
+
