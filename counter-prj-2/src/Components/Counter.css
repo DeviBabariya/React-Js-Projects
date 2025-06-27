@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+a{
+  text-decoration: none;
+}
+
 .counter {
   display: flex;
   justify-content: center;
@@ -94,3 +98,4 @@
 .reset a:hover {
   background-color:#fff ;
 }
+
