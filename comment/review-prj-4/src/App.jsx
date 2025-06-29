@@ -1,5 +1,5 @@
 import './App.css'
-import ReviewForm from './Components/form'
+import ReviewForm from './Components/Form'
 
 function App() {
 
