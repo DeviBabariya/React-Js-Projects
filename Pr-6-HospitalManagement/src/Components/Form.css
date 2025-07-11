@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    top:100px;
+}
+
+form{
+    top: 180px;
+    text-align: left;
+}
