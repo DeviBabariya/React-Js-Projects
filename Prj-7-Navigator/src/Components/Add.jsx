@@ -106,7 +106,7 @@ const AddProduct = () => {
               <option value="">Select Category</option>
               <option value="Skincare">Skincare</option>
               <option value="Hair">Hair</option>
-              <option value="Fashion">Fashion</option>
+              <option value="Appliances">Appliances</option>
               <option value="Make-Up">Make-Up</option>
               <option value="Fragnance">Fragnance</option>
             </Form.Select>
