@@ -6,7 +6,7 @@ import { IoMdAdd } from "react-icons/io";
 const Header = () => {
   return (
     <>
-      <Navbar className="bg-body-tertiary fixed-top">
+      <Navbar className="bg-body-tertiary fixed-top shadow">
         <Container>
           <Navbar.Brand href="/">
                <img src={Logo} alt="logo" width = "120px" className="my-2"/>

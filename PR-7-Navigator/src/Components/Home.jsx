@@ -31,7 +31,7 @@ const Home = () => {
         <h1 style={{marginTop:"90px ", marginBottom:"30px"}} >Home</h1>
         <div className="d-flex flex-wrap justify-content-center ">
           {productData.map((product) => (
-            <Card style={{ width: "23rem", margin: "10px", borderLeft: "7px solid #E80071"}} key={product.id}>
+            <Card style={{ width: "23rem", margin: "10px"}} className="mt-3 mb-4 mx-4 shadow" key={product.id}>
               <Card.Img variant="top" src={product.image}  alt="product-img" height="300px" className="object-fit-contain"/>
               <Card.Body>
                 <Card.Title>
@@ -41,7 +41,7 @@ const Home = () => {
                 <Badge>{product.category}</Badge>
                 <br />
                 <br />
-                <h5 className="mb-4">Price : {product.price} rs</h5>
+                <h6 className="mb-4">Price : {product.price} rs</h6>
                 <Button onClick={() => handleEdit(product.id)} className="edit-btn">
                   <FaEdit className="mb-1 fs-5"/> Edit
                 </Button>{" "}

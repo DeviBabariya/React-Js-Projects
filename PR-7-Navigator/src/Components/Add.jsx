@@ -1,138 +1,3 @@
-// import generateUniqueId from "generate-unique-id";
-// import { useState } from "react";
-// import { useNavigate } from "react-router";
-// import { Button, Col, Container, Form, Row } from "react-bootstrap";
-// import { getStorageData, setStorageData } from "../Services/StorageData";
-
-// const AddProduct = () => {
-//   const navigate = useNavigate();
-//   const intialState = {
-//     title: "",
-//     desc: "",
-//     price: "",
-//     category: "",
-//     image: "",
-//   };
-//   const [inputForm, setInputForm] = useState(intialState);
-
-//   const handleChanged = (e) => {
-//     const { name, value } = e.target;
-//     setInputForm({
-//       ...inputForm,
-//       [name]: value,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     let id = generateUniqueId({
-//       length: 6,
-//       useLetters: false,
-//     });
-//     inputForm.id = id;
-//     //   console.log("Submitted : => ", inputForm);
-//     let data = getStorageData();
-//     data.push(inputForm);
-//     setStorageData(data);
-//     navigate("/");
-//   };
-//   return (
-//     <>
-//       <Container className=" mt-5 d-flex justify-content-center">
-//         <div  style={{ width: "100%", maxWidth: "600px" }}>
-//         <h2 className="text-center mb-4">Add Product Page</h2>
-//           <Form className="p-4"  onSubmit={handleSubmit} style={{ width: '100%', maxWidth: '100%', marginLeft:'' }}>
-//             <Form.Group as={Row} className="mb-3">
-//               <Form.Label column sm="2">
-//                 Title
-//               </Form.Label>
-//               <Col sm="6">
-//                 <Form.Control
-//                   type="text"
-//                   placeholder="Enter Title"
-//                   name="title"
-//                   value={inputForm.title}
-//                   onChange={handleChanged}
-//                 />
-//               </Col>
-//             </Form.Group>
-//             <Form.Group as={Row} className="mb-3">
-//               <Form.Label column sm="2">
-//                 Description
-//               </Form.Label>
-//               <Col sm="6">
-//                 <Form.Control
-//                   type="text"
-//                   placeholder="Enter Description"
-//                   name="desc"
-//                   value={inputForm.desc}
-//                   onChange={handleChanged}
-//                 />
-//               </Col>
-//             </Form.Group>
-
-//             <Form.Group as={Row} className="mb-3">
-//               <Form.Label column sm="2">
-//                 Price
-//               </Form.Label>
-//               <Col sm="6">
-//                 <Form.Control
-//                   type="number"
-//                   placeholder="Enter Price"
-//                   name="price"
-//                   value={inputForm.price}
-//                   onChange={handleChanged}
-//                 />
-//               </Col>
-//             </Form.Group>
-
-//             <Form.Group as={Row} className="mb-3">
-//               <Form.Label column sm="2">
-//                 Category
-//               </Form.Label>
-//               <Col sm="6">
-//                 <Form.Select
-//                   aria-label="Default select example"
-//                   name="category"
-//                   onChange={handleChanged}
-//                 >
-//                   <option>Select Category</option>
-//                   <option value="Skincare">Skincare</option>
-//                   <option value="Hair">Hair</option>
-//                   <option value="Fashion">Fashion</option>
-//                   <option value="Make-Up">Make-Up</option>
-//                   <option value="Appliances">Appliances</option>
-//                 </Form.Select>
-//               </Col>
-//             </Form.Group>
-
-//             <Form.Group as={Row} className="mb-3">
-//               <Form.Label column sm="2">
-//                 Image
-//               </Form.Label>
-//               <Col sm="6">
-//                 <Form.Control
-//                   type="text"
-//                   placeholder="Enter Image URL"
-//                   name="image"
-//                   value={inputForm.image}
-//                   onChange={handleChanged}
-//                 />
-//               </Col>
-//             </Form.Group>
-
-//             <Button type="submit" style={{marginRight:'200px'}} className="add-btn">Add Product</Button>
-//           </Form>
-//           </div>
-//       </Container>
-//     </>
-//   );
-// };
-
-// export default AddProduct;
-
-
-
 import generateUniqueId from "generate-unique-id";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -141,6 +6,7 @@ import { getStorageData, setStorageData } from "../Services/StorageData";
 
 const AddProduct = () => {
   const navigate = useNavigate();
+
   const initialState = {
     title: "",
     desc: "",
@@ -148,25 +14,39 @@ const AddProduct = () => {
     category: "",
     image: "",
   };
-  const [inputForm, setInputForm] = useState(initialState);
 
-  const handleChanged = (e) => {
+  const [form, setForm] = useState(initialState);
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputForm({
-      ...inputForm,
-      [name]: value,
-    });
+    setForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    setErrors(prev => ({ ...prev, [name]: "" })); 
+  };
+
+  const validateForm = () => {
+    const err = {};
+    if ( form.title.length < 5) err.title = "Title is required and must be at least 3 characters.";
+    if (form.desc.length < 10) err.desc = "Description is required and must be at least 5 characters.";
+    if (!form.price || parseFloat(form.price) <= 0) err.price = "Price must be a positive number.";
+    if (!form.category) err.category = "Category is required.";
+    if (!form.image.trim()) err.image = "Image URL is required.";
+
+    setErrors(err);
+    return Object.keys(err).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let id = generateUniqueId({
-      length: 6,
-      useLetters: false,
-    });
-    inputForm.id = id;
-    let data = getStorageData();
-    data.push(inputForm);
+    if (!validateForm()) return;
+
+    const id = generateUniqueId({ length: 6, useLetters: false });
+    const newProduct = { ...form, id };
+    const data = getStorageData();
+    data.push(newProduct);
     setStorageData(data);
     navigate("/");
   };
@@ -180,65 +60,75 @@ const AddProduct = () => {
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Title"
               name="title"
-              value={inputForm.title}
-              onChange={handleChanged}
+              value={form.title}
+              onChange={handleChange}
+              isInvalid={!!errors.title}
+              placeholder="Enter product title"
             />
+            <Form.Control.Feedback type="invalid">{errors.title}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Description"
               name="desc"
-              value={inputForm.desc}
-              onChange={handleChanged}
+              value={form.desc}
+              onChange={handleChange}
+              isInvalid={!!errors.desc}
+              placeholder="Enter description"
             />
+            <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Price</Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter Price"
               name="price"
-              value={inputForm.price}
-              onChange={handleChanged}
+              value={form.price}
+              onChange={handleChange}
+              isInvalid={!!errors.price}
+              placeholder="Enter price"
             />
+            <Form.Control.Feedback type="invalid">{errors.price}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Category</Form.Label>
             <Form.Select
               name="category"
-              value={inputForm.category}
-              onChange={handleChanged}
+              value={form.category}
+              onChange={handleChange}
+              isInvalid={!!errors.category}
             >
               <option value="">Select Category</option>
               <option value="Skincare">Skincare</option>
               <option value="Hair">Hair</option>
               <option value="Fashion">Fashion</option>
               <option value="Make-Up">Make-Up</option>
-              <option value="Appliances">Appliances</option>
+              <option value="Fragnance">Fragnance</option>
             </Form.Select>
+            <Form.Control.Feedback type="invalid">{errors.category}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Image</Form.Label>
+            <Form.Label>Image URL</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Image URL"
               name="image"
-              value={inputForm.image}
-              onChange={handleChanged}
+              value={form.image}
+              onChange={handleChange}
+              isInvalid={!!errors.image}
+              placeholder="Enter image URL"
             />
+            <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
           </Form.Group>
 
-          <Button type="submit" className="d-block mx-auto mt-4 add-btn">
-            Add Product
-          </Button>
+          <div className="text-center">
+            <Button type="submit" className="mt-3 px-5 add-btn">Add Product</Button>
+          </div>
         </Form>
       </Container>
     </div>
