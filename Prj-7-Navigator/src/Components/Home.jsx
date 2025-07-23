@@ -10,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleEdit = (id) => {
-    navigate(`/edit-product/${id}`);
+    navigate(`/edit-product/${id}`); 
   }
 
   const handleDelete = (id) => {
