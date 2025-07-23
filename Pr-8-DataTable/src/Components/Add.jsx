@@ -29,7 +29,7 @@ const AddProduct = () => {
 
   const validateForm = () => {
     const err = {};
-    if ( form.title.length < 5) err.title = "Title is required and must be at least 5 characters.";
+    if ( form.title.length < 5) err.title = "Title is required and must be at least 3 characters.";
     if (form.desc.length < 10) err.desc = "Description is required and must be at least 5 characters.";
     if (!form.price || parseFloat(form.price) <= 0) err.price = "Price must be a positive number.";
     if (!form.category) err.category = "Category is required.";

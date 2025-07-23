@@ -1,13 +1,14 @@
-import generateUniqueId from "generate-unique-id";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import { Button, Container, Form } from "react-bootstrap";
 import { getStorageData, setStorageData } from "../Services/StorageData";
 
-const AddProduct = () => {
+const EditProduct = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const initialState = {
+    id: "",
     title: "",
     desc: "",
     price: "",
@@ -15,26 +16,33 @@ const AddProduct = () => {
     image: "",
   };
 
-  const [form, setForm] = useState(initialState);
+  const [inputForm, setInputForm] = useState(initialState);
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    const data = getStorageData();
+    const product = data.find(p => p.id === id);
+    if (product) {
+      setInputForm(product);
+    }
+  }, [id]);
+
+  const handleChanged = (e) => {
     const { name, value } = e.target;
-    setForm(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    setErrors(prev => ({ ...prev, [name]: "" })); 
+    setInputForm({
+      ...inputForm,
+      [name]: value,
+    });
+    setErrors(prev => ({ ...prev, [name]: "" })); // clear error on change
   };
 
   const validateForm = () => {
     const err = {};
-    if ( form.title.length < 5) err.title = "Title is required and must be at least 5 characters.";
-    if (form.desc.length < 10) err.desc = "Description is required and must be at least 5 characters.";
-    if (!form.price || parseFloat(form.price) <= 0) err.price = "Price must be a positive number.";
-    if (!form.category) err.category = "Category is required.";
-    if (!form.image.trim()) err.image = "Image URL is required.";
-
+    if (!inputForm.title.trim()) err.title = "Title is required.";
+    if (!inputForm.desc.trim()) err.desc = "Description is required.";
+    if (!inputForm.price || parseFloat(inputForm.price) <= 0) err.price = "Price must be a positive number.";
+    if (!inputForm.category) err.category = "Category is required.";
+    if (!inputForm.image.trim()) err.image = "Image URL is required.";
     setErrors(err);
     return Object.keys(err).length === 0;
   };
@@ -43,28 +51,27 @@ const AddProduct = () => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    const id = generateUniqueId({ length: 6, useLetters: false });
-    const newProduct = { ...form, id };
     const data = getStorageData();
-    data.push(newProduct);
-    setStorageData(data);
+    const updatedData = data.map(product =>
+      product.id === id ? inputForm : product
+    );
+    setStorageData(updatedData);
     navigate("/");
   };
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <Container style={{ maxWidth: "600px", width: "100%" }}>
-        <h2 className="text-center mb-4 mt-5">Add Product Page</h2>
+        <h2 className="text-center mb-4 mt-5">Edit Product Page</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
               name="title"
-              value={form.title}
-              onChange={handleChange}
+              value={inputForm.title}
+              onChange={handleChanged}
               isInvalid={!!errors.title}
-              placeholder="Enter product title"
             />
             <Form.Control.Feedback type="invalid">{errors.title}</Form.Control.Feedback>
           </Form.Group>
@@ -74,10 +81,9 @@ const AddProduct = () => {
             <Form.Control
               type="text"
               name="desc"
-              value={form.desc}
-              onChange={handleChange}
+              value={inputForm.desc}
+              onChange={handleChanged}
               isInvalid={!!errors.desc}
-              placeholder="Enter description"
             />
             <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
           </Form.Group>
@@ -87,10 +93,9 @@ const AddProduct = () => {
             <Form.Control
               type="number"
               name="price"
-              value={form.price}
-              onChange={handleChange}
+              value={inputForm.price}
+              onChange={handleChanged}
               isInvalid={!!errors.price}
-              placeholder="Enter price"
             />
             <Form.Control.Feedback type="invalid">{errors.price}</Form.Control.Feedback>
           </Form.Group>
@@ -99,8 +104,8 @@ const AddProduct = () => {
             <Form.Label>Category</Form.Label>
             <Form.Select
               name="category"
-              value={form.category}
-              onChange={handleChange}
+              value={inputForm.category}
+              onChange={handleChanged}
               isInvalid={!!errors.category}
             >
               <option value="">Select Category</option>
@@ -118,21 +123,20 @@ const AddProduct = () => {
             <Form.Control
               type="text"
               name="image"
-              value={form.image}
-              onChange={handleChange}
+              value={inputForm.image}
+              onChange={handleChanged}
               isInvalid={!!errors.image}
-              placeholder="Enter image URL"
             />
             <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
           </Form.Group>
 
-          <div className="text-center">
-            <Button type="submit" className="mt-3 px-5 add-btn">Add Product</Button>
-          </div>
+          <Button type="submit" className="d-block mx-auto mt-4 edit-btn">
+            Update Product
+          </Button>
         </Form>
       </Container>
     </div>
   );
 };
 
-export default AddProduct;
+export default EditProduct;

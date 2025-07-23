@@ -1,0 +1,66 @@
+#root {
+  max-width:100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge{
+  background: #E80071 !important;
+}
+
+
+.add-btn , .edit-btn , .del-btn , .pagination .active , .search-btn {
+  background-color: #E80071;
+  border: #E80071 1px solid;
+  color: #fff;
+}
+.add-btn:hover , .edit-btn:hover , .del-btn:hover ,.pagination .active:hover,.search-btn:hover , .sort-btn{ 
+  border: #E80071 1px solid;
+  color: #E80071 !important;
+  background:#fff !important;
+  transition: all 0.3s ease-in;
+}
+
+.sort-btn:hover{
+  background-color: #E80071 !important;
+  border: #E80071 1px solid !important;
+  color: #fff !important;
+}
+
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 8px;
+  color: #E80071;
+}
+
+a{
+    text-decoration: none;
+}
+
+.pagination li {
+  padding: 8px 12px;
+  border: 1px solid #E80071;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination li a{
+  color: #E80071;
+}
+
+.pagination li:hover{
+  background-color: #E80071;
+  transition: all 0.3s ease-in;
+}
+.pagination li:hover a{
+  color: #ffffff;
+  transition: all 0.3s ease-in;
+}
+
+
+
+
+
