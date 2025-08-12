@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.header {
+  height: 87px;
+}
+
+.vertical-line {
+  width: 1px;
+  display: flex;
+  background-color: #f2f2f2ff;
+  height: 87px;
+}
+
+
+
+/* Address & Time */
+.text-address {
+  font-size: 14px;
+  color: black;
+}
+
+/* Search */
+
+.input-group {
+  border-radius: 13px !important;
+  border: #0000000a 1px solid !important;
+  padding: 5px 0;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+
+}
+
+.form-control {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.search:hover , .clear:hover{
+  color:green !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.add-btn:hover {
+  background-color: green !important;
+  color: white !important;
+  transition: all 0.5s ease-in-out !important;
+  border: none !important;
+}
+
+/* Loader */
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.submit-add,
+.submit-edit {
+  color: white !important;
+  background-color: green !important;
+  border: 1px solid green !important;
+  font-weight: 600;
+
+}
+
+.submit-add:hover,
+.submit-edit:hover {
+  color: green !important;
+  background-color: white !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 8px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.pagination li {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination li:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .active {
+  background-color: #008000;
+  color: white;
+  border-color: #008000;
+}
+
+
+ .pagination .active , .search-btn, .sort-btn {
+  background-color: #008000;
+  border: #008000 1px solid;
+  color: #fff;
+}
+.pagination .active:hover,.search-btn:hover , .sort-btn{ 
+  border: #008000 1px solid;
+  color: #008000 !important;
+  background:#fff !important;
+  transition: all 0.3s ease-in;
+}
+
+.sort-btn:hover{
+  background-color: #008000 !important;
+  border: #008000 1px solid !important;
+  color: #fff !important;
+}
+
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 8px;
+  color: #008000;
+}
+
+a{
+    text-decoration: none;
+}
+
+.pagination li {
+  padding: 8px 12px;
+  border: 1px solid #008000;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination li a{
+  color: #008000;
+}
+
+.pagination li:hover{
+  background-color: #008000;
+  transition: all 0.3s ease-in;
+}
+.pagination li:hover a{
+  color: #ffffff;
+  transition: all 0.3s ease-in;
+}
+
+.view-btn{
+  background-color: #ffffff;
+  color: #008000;
+  border: #008000 1px solid;
+  border-radius: 4px;
+}
+
+.view-btn:hover{
+  background-color: #008000;
+  color: #ffffff;
+  transition: all 0.3s ease-in;
+}

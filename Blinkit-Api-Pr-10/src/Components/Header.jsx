@@ -1,33 +1,12 @@
 import { Container, Row, Col, Form, InputGroup, Navbar } from "react-bootstrap";
 import logo from "../assets/logo.svg";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { IoSearch } from "react-icons/io5";
-import { IoCloseCircle } from "react-icons/io5";
 import { IoBagAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { searchProduct } from "../Services/Actions/productAction";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+
 
 
 const Header = () => {
-
-  const dispatch = useDispatch();
-  const [search, setSearch] = useState("");
-  const navigate = useNavigate();
-
-
-const handleSearch = (e) => {
-        e.preventDefault();
-        dispatch(searchProduct(search.trim()));
-    };
-
- const handleClear = () => {
-        setSearch("");
-        dispatch(searchProduct("")); 
-    };
-  
 
   return (
     <header className="border-bottom position-sticky top-0 bg-white z-2">
@@ -49,7 +28,7 @@ const handleSearch = (e) => {
           </Col>
 
           <Col md="5">
-            <form onSubmit={handleSearch} >
+            {/* <form onSubmit={handleSearch} >
               <InputGroup style={{ background: '#f8f8f8'  }}>
                 <InputGroup.Text
                   className="bg-transparent border-0"
@@ -77,7 +56,7 @@ const handleSearch = (e) => {
                   
                 </InputGroup.Text>
               </InputGroup>
-            </form>
+            </form> */}
           </Col>
 
           <Col md="3" className="text-end">

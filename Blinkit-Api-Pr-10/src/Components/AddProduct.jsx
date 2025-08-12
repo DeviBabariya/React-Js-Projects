@@ -13,6 +13,7 @@ const AddProduct = () => {
     id: "",
     title: "",
     desc: "",
+    amount: "",
     price: "",
     image: "",
   };
@@ -30,7 +31,8 @@ const AddProduct = () => {
 const validateForm = () => {
   const err = {};
   if (inputForm.title.length < 5) err.title = "Title is required and must be at least 5 characters.";
-  if (inputForm.desc.length < 3) err.desc = "Description is required and must be at least 3 characters.";
+  if (inputForm.desc.length < 5) err.desc = "Description is required and must be at least 5 characters.";
+  if (inputForm.amount.length < 3) err.amount = "Amount is required and must be at least 3 characters.";
   if (!inputForm.price || parseFloat(inputForm.price) <= 0) err.price = "Price must be a positive number.";
   if (!inputForm.image.trim()) err.image = "Image URL is required.";
 
@@ -75,6 +77,24 @@ const validateForm = () => {
             <Form.Control.Feedback type="invalid">{errors.title}</Form.Control.Feedback>
           </Form.Group>
 
+            <Form.Group className="mb-3">
+            <Form.Label column sm="2">
+              Description
+            </Form.Label>
+          
+              <Form.Control
+                type="text"
+                placeholder="Enter Description"
+                name="desc"
+                value={inputForm.desc}
+                onChange={handleChanged}
+                isInvalid={!!errors.desc}
+              />
+           
+            <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
+          </Form.Group>
+
+
           <Form.Group className="mb-3">
             <Form.Label column sm="2">
               Amount
@@ -83,12 +103,12 @@ const validateForm = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Amount of product in (Kg , g , L , ml  , units)"
-                name="desc"
-                value={inputForm.desc}
+                name="amount"
+                value={inputForm.amount}
                 onChange={handleChanged}
-                isInvalid={!!errors.desc}
+                isInvalid={!!errors.amount}
               />
-            <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.amount}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group  className="mb-3">
@@ -124,7 +144,7 @@ const validateForm = () => {
             <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
           </Form.Group>
 
-          <Button type="submit" className="mt-2 submit-add">Add Product</Button>
+          <Button type="submit" className="mt-2 mb-3 submit-add">Add Product</Button>
         </Form>
       </Container>
     </>

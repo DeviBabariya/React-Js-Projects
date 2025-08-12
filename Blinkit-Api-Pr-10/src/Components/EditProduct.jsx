@@ -13,6 +13,7 @@ const EditProduct = () => {
     id: "",
     title: "",
     desc: "",
+    amount: "",
     price: "",
     image: "",
   };
@@ -30,7 +31,8 @@ const EditProduct = () => {
     const validateForm = () => {
     const err = {};
     if (inputForm.title.length < 5) err.title = "Title is required and must be at least 5 characters.";
-    if (inputForm.desc.length < 3) err.desc = "Amount is required and must be at least 3 characters.";
+   if (inputForm.desc.length < 5) err.desc = "Description is required and must be at least 5 characters.";
+  if (inputForm.amount.length < 3) err.amount = "Amount is required and must be at least 3 characters.";
     if (!inputForm.price || parseFloat(inputForm.price) <= 0) err.price = "Price must be a positive number.";
     if (!inputForm.image.trim()) err.image = "Image URL is required.";
 
@@ -82,19 +84,39 @@ const EditProduct = () => {
             <Form.Control.Feedback type="invalid">{errors.title}</Form.Control.Feedback>
 
           </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label column sm="2">
+              Description
+            </Form.Label>
+          
+              <Form.Control
+                type="text"
+                placeholder="Enter Description"
+                name="desc"
+                value={inputForm.desc}
+                onChange={handleChanged}
+                isInvalid={!!errors.desc}
+              />
+           
+            <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
+          </Form.Group>
+
+
           <Form.Group className="mb-3">
             <Form.Label column sm="2">
               Amount
             </Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter Description"
-              name="desc"
-              value={inputForm.desc}
-              onChange={handleChanged}
-              isInvalid={!!errors.desc}
-            />
-            <Form.Control.Feedback type="invalid">{errors.desc}</Form.Control.Feedback>
+          
+              <Form.Control
+                type="text"
+                placeholder="Enter Amount of product in (Kg , g , L , ml  , units)"
+                name="amount"
+                value={inputForm.amount}
+                onChange={handleChanged}
+                isInvalid={!!errors.amount}
+              />
+            <Form.Control.Feedback type="invalid">{errors.amount}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -129,7 +151,7 @@ const EditProduct = () => {
             <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
           </Form.Group>
 
-          <Button type="submit" className="submit-edit mt-2">Update Product</Button>
+          <Button type="submit" className="submit-edit mb-3 mt-2">Update Product</Button>
         </Form>
       </Container>
     </>

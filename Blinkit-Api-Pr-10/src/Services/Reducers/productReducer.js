@@ -58,27 +58,6 @@ export const productReducer = (state = initalState, action) => {
                 isUpdated: true,
             }
 
-        case "SEARCH_PRODUCT_LOADING":
-            return {
-                ...state,
-                isLoading: true,
-                isError: ""
-            };
-
-        case "SEARCH_PRODUCT_SUC":
-            return {
-                ...state,
-                products: action.payload,
-                isLoading: false
-            };
-
-        case "SEARCH_PRODUCT_ERR":
-            return {
-                ...state,
-                isLoading: false,
-                isError: action.payload
-            };
-
         default:
             return state;
     }

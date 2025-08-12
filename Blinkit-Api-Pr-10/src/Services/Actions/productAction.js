@@ -132,21 +132,3 @@ export const updateProductAsync = (data) => {
         }
     }
 }
-
-export const searchProduct = (query = "") => async (dispatch) => {
-    dispatch({ type: "SEARCH_PRODUCT_LOADING" });
-    try {
-        const res = await axios.get(`http://localhost:3000/products`, {
-            params: { q: query } 
-        });
-        dispatch({
-            type: "SEARCH_PRODUCT_SUC",
-            payload: res.data
-        });
-    } catch (error) {
-        dispatch({
-            type: "SEARCH_PRODUCT_ERR",
-            payload: error.message
-        });
-    }
-};
