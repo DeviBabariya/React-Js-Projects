@@ -148,17 +148,10 @@ const handleFileChanged = async (e) => {
                 type="file"
                 placeholder="Enter Image URL"
                 name="image"
-                // value={inputForm.image}
                 onChange={handleFileChanged}
                  isInvalid={!!errors.image}
               />
 
-              {/* <Form.Control
-                type="file"
-                name="image"
-                onChange={handleFileChanged}
-                //  isInvalid={!!errors.image}
-              /> */}
 
             <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
 
