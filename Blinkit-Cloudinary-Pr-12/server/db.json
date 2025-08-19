@@ -1,0 +1,140 @@
+{
+  "products": [
+    {
+      "id": "423665",
+      "title": "Amul Gold Full Cream Milk",
+      "desc": "Amul Gold Full Cream Milk (Polypack) Milk is homogenized toned pasteurized milk. Rich and creamy, this milk is an excellent source of vitamin A and vitamin D that enhances growth and development of the body tissues and the brain",
+      "amount": "500 ml",
+      "price": "35",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/628c97e0-5ed4-425d-a667-1d3bfa6f0bde.png"
+    },
+    {
+      "id": "433616",
+      "title": "Amul Salted Butter",
+      "desc": "Made from the freshest of cream, the Amul butter has wonderful taste which is delicate and slightly salty.",
+      "amount": "100 g",
+      "price": "62",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/613787ac-f983-4cfb-b534-e219c8d47b39.png"
+    },
+    {
+      "id": "018750",
+      "title": "Amul Blend Diced Cheese",
+      "desc": "Diced cheese. Mozzarella and cheddar blend. Perfect for delicious pizza, patties, vegetable salad, soup and many more dishes.",
+      "amount": "200 g",
+      "price": "129",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/dfa345bf-052e-4657-ae4f-859bfe45fecf.png"
+    },
+    {
+      "id": "552945",
+      "title": "Amul Pure Milk Cheese Slices",
+      "desc": "Enjoy the real taste of India With Amul Cheese Slices. The Amul cheese is made from the graded milk and by using microbial Renne. Sliced cheese is a great source of milk proteins, vitamins and other nutrients.",
+      "amount": "200 g",
+      "price": "145",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/a501e65f-194b-4db2-abc9-6b7bb515349c.png"
+    },
+    {
+      "id": "046637",
+      "title": "Kettle Studio Sharp Jalapenos & Cheese  Chips",
+      "desc": "A balanced blend of Jalapenos and Cream Cheese Made with finest potatoes Gluten-free and no artificial colouring Prepared in sunflower oil Infused with tasty seasonings and tossed well Enjoy the thick signature bite and crunchiness",
+      "amount": "56 g",
+      "price": "47",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/fc9d86ff-b9c1-4c55-b099-ef6f88d843d7.png"
+    },
+    {
+      "id": "620417",
+      "title": "Beanly Choco Hazelnut Spread with Breadsticks",
+      "desc": "Description Now you can enjoy the taste of Chocolate & Hazlenut anytime, anywhere, with the new snack pack. This comes with choco-hazlenut spreads & crispy breadsticks, perfect for dipping.",
+      "amount": "52g",
+      "price": "99",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/2a55bb8b-bf09-454b-9233-cc00404c6a5c.png"
+    },
+    {
+      "id": "665319",
+      "title": "Pringles Original Potato Chips - Pack of 2",
+      "desc": "Crispy and crunchy, Pringles Original Chips make for a flavourful all time snack. It offers a delightful taste in every bite and leaves one asking for more. Just pair it with salsa dip or chilli sauce to relish the exquisite taste.",
+      "amount": "2 x 107 g",
+      "price": "213",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/815e8dd5-37e9-4dc2-b3f7-ded08e12a7ab.png"
+    },
+    {
+      "id": "366984",
+      "title": "Unibic Danish Coconut Cake",
+      "desc": "Experience the rich, buttery goodness of danish inspired cake infused with the natural sweetness of coconut. Soft, moist, and baked to perfection every bite is a delight.",
+      "amount": "220 g",
+      "price": "149",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/f12a184d-c050-4fa6-a269-8e462eb2003a.png"
+    },
+    {
+      "id": "136286",
+      "title": "Hershey's Kisses Milk Chocolate Pack",
+      "desc": "Enjoy melt-in-mouth chocolates that are perfect bite-sized chocolates in 5 delectable flavors. HERSHEY’S Kisses are  delicious chocolates that are individually wrapped to make your loved ones feel special.",
+      "amount": "36 g",
+      "price": "58",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/2ce71b3e-1a36-4056-a0e2-b4351dcc03b1.png"
+    },
+    {
+      "id": "008880",
+      "title": "Ferrero Rocher Chocolate Gift Pack (24 pieces)",
+      "desc": "Ferrero Rocher offers a unique taste experience of contrasting layers that engages all the senses Ferrero Rocher is available in different packs making it ideal for sharing.",
+      "amount": "300 g",
+      "price": "900",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/7d03babc-7660-4d1d-8842-0c325d4ad5cd.png"
+    },
+    {
+      "id": "733160",
+      "title": "Brown Coconut",
+      "desc": "Indulge in the rich, creamy goodness of our Brown Coconut (Nariyal). Packed with healthy fats, vitamins, and minerals, it supports brain function, boosts energy, and promotes heart health. Perfect for cooking, baking, and snacking, this nutritious coconut adds a wholesome and flavorful touch to your diet.",
+      "amount": "1 piece",
+      "price": "55",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/c8676797-defa-4cad-98e2-fc89a966a9a7.png"
+    },
+    {
+      "id": "741450",
+      "title": "Black Grapes",
+      "desc": "Black Grapes are known for their velvety colour and sweet flavour. Apart from being relished as a fruit or in salads, black grapes can also be cooked in a variety of ways to make sauces, jams, compotes, desserts and more.",
+      "amount": "250 g",
+      "price": "97",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/b7d02b60-ce28-4c99-aa10-6badd6d52792.png"
+    },
+    {
+      "id": "737825",
+      "title": "Raw Pressery Iced Green Tea (Peach)",
+      "desc": "Every effort is made to maintain accuracy of all information. However, actual product packaging and materials may contain more and/or different information. It is recommended not to solely rely on the information presented.",
+      "amount": "250 ml",
+      "price": "57",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/e6dce1e7-04c0-4dc3-83fd-8b8ccbe9c0af.png"
+    },
+    {
+      "id": "233513",
+      "title": "Nongshim Shin Cup Noodles",
+      "desc": "It has a very spicy flavour.  It's packed with essential nutrients and a lot of energy.  It is traditional and korean style instant spicy soup ramen.",
+      "amount": "68 g",
+      "price": "149",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/26682bde-fad4-4516-87df-2c5ca5b95ca9.png"
+    },
+    {
+      "id": "968572",
+      "title": "M&M's Chocolate Candy",
+      "desc": "Sugar, Cocoa mass, Milk Solids, Lactose, Cocoa Butter, Starch, Plam fat, Glucose syrup, Shea fat, Stabiliser (Gum Arabic), Emulsifier (Soya lecithin), Colours (Curcumins), Brillant blue FCF, Carotenes, Beta-apo-8-carotenal, Beetroot red, Titanium dioxide, Iron oxides and Hydroxides, Dextrin, Glazing agent, Plam kenal oil, Salt, Natural Vanilla Extract, May be Peanuts.",
+      "amount": "45 g",
+      "price": "155",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/e0aa8f61-7747-4fee-84cd-de2c76c62bd9.png"
+    },
+    {
+      "id": "798745",
+      "title": "Rechargeable Bunny Night Decorative Lamp",
+      "desc": "The hashwow® bpa-free silicone bunny boy night lamp is a cute, rechargeable bunny-shaped lamp with vibrant multicolor led lights, creating a soothing glow. Made from durable silicone, it's safe and long-lasting. Ideal for kids' rooms, it helps with sleep and makes a fun birthday gift.",
+      "amount": "1 unit",
+      "price": "900",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/ed2c2e02-19fc-4cf0-aa66-546e709dcd73.png"
+    },
+    {
+      "id": "245201",
+      "title": "Cloud LED Tulip Night Decorative Lamp",
+      "desc": "Create a whimsical and romantic atmosphere with the hashwow® cloud tulip night light. Featuring delicate led tulip flowers set against a dreamy cloud-shaped design, this night light is perfect for adding a soft, enchanting glow to bedrooms, nurseries, or cozy spaces. ",
+      "amount": "1 unit",
+      "price": "849",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/3f091678-27df-4647-8bdf-d1c1225c9ebc.png"
+    }
+  ]
+}
