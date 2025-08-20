@@ -33,7 +33,7 @@ const EditProduct = () => {
     const err = {};
     if (inputForm.title.length < 5) err.title = "Title is required and must be at least 5 characters.";
     if (inputForm.desc.length < 5) err.desc = "Description is required and must be at least 5 characters.";
-    if (inputForm.amount.length < 3) err.amount = "Amount is required and must be at least 3 characters.";
+    if (!inputForm.amount) err.amount = "Amount is required.";
     if (!inputForm.price || parseFloat(inputForm.price) <= 0) err.price = "Price must be a positive number.";
     if (!inputForm.image.trim()) err.image = "Image URL is required.";
 
