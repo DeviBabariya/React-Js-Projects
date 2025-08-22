@@ -89,7 +89,7 @@ const SignUp = () => {
         <p className="mt-4">
           Already Have an Account ?  {" "}
           <Link className="" to={"/signIn"}>
-            SignIN
+           Login
           </Link>{" "}
         </p>
       </Container>

@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, InputGroup, Navbar, Button } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Button } from "react-bootstrap";
 import logo from "../assets/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -48,7 +48,7 @@ const Header = () => {
                 </>
                   :
                   <Link className="text-black me-3" to={"/signIn"}>
-                    SignIn
+                    Login
                   </Link>
               }
           </Col>

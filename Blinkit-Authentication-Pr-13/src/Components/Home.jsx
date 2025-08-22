@@ -5,6 +5,7 @@ import { Button, Card, Container, Spinner, Form , Row , Col } from "react-bootst
 import { useNavigate } from "react-router";
 import StaticElem from './StaticElements'
 import Categories from "./Categories";
+import Footer from "./Footer";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import time from "../assets/time.avif"
@@ -183,6 +184,7 @@ const Home = () => {
               />
             </div>
           </Container>
+          <Footer />
         </>
       )}
     </>

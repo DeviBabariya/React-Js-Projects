@@ -41,7 +41,7 @@ const SignIn = () => {
   return (
     <>
       <Container className="signin-container mt-3">
-        <h2>Sign In </h2>
+        <h2>Login </h2>
         {error ? <p>{error}</p> : ""}
         <Form className="signin-form mt-4" onSubmit={handleSubmit}>
           <Form.Group as={Row} className="mb-3">
@@ -72,11 +72,11 @@ const SignIn = () => {
               />
             </Col>
           </Form.Group>
-          <Button type="submit" className="">Sign In</Button>
+          <Button type="submit" className="">Login</Button>
         </Form>
         <br />
-          <Button onClick={handleGoogleLogin} className="google-btn mb-4"> <FcGoogle  className="fs-3 me-2"/>SignIn with Google</Button>
-        <p>Create an Account ? <Link className="" to={"/signUp"}>SignUP</Link> </p>
+          <Button onClick={handleGoogleLogin} className="google-btn mb-4"> <FcGoogle  className="fs-3 me-2"/>Login with Google</Button>
+        <p>Create an Account ? <Link className="" to={"/signUp"}>SignUp</Link> </p>
       </Container>
     </>
   );
